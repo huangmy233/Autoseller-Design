@@ -1,0 +1,13 @@
+module Autoseller(clk,rst,start,cancel,coin_val,hold_ind,charge_ind,drinktk_ind,charge_val);
+  input clk, rst;
+  input start, cancel;
+  input [1:0]coin_val;
+  output hold_ind, charge_ind;
+  output [2:0]charge_val;
+  reg hold_ind, charge_ind, drink_ind;
+  reg [2:0] charge_val;
+  reg [2:0] currentstate, nextstate;
+  parameter S0=3'b000; parameter S1=3'b001; 
+  parameter S2=3'b010; parameter S3=3'b011; 
+  parameter S4=3'b100; parameter S5=3'b101;
+  parameter S6=3'b110;
